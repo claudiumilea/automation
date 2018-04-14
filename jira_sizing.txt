@@ -1,0 +1,169 @@
+Salut Nicu,
+
+Din ce am discutat in ceea ce priveste efortul estimat acesta ar fi urmatoarul:
+- 20 - 25 man days pentru instalarile, configurarile si customizarile initiale. Facem un prototip initial cu configurari minimale in efort de 5-7 man days si apoi planificam impreuna ce alte imbunatari putem sa aducem in contul a restului de zile;
+- 20 - 25 man days pentru supportul anual din partea Euro-Testing ulterior implementarii;
+- 10 man days pentru pregatirea si executarea de training-uri pentru utilizatori;
+Ar fi un total de 50 - 60 de man days.
+
+Licenses:
+Jira Server and Confluence on premise for 250 named users: 23K $ with yearly maintenance of 11550 $.
+Jira Server and Confluence on premise for 250 named users: 35K $ with yearly maintenance of 17600 $.
+Recommended plugins: Configuration Manager for Jira for 250 users: 3200 $.
+
+First yearly maintenance included and then it is 50% of licenses prices. Atlassian from time to time updates its policies and the current prices and % for maintenance could vary in the future.
+Additional plus-ins are not included in here but based on analysis will probably be needed.
+
+
+
+
+
+Jira
+
+System Requirements
+
+For a medium level machine, consider using a medium server CPU (e.g. quad core) and high speed hard disks (e.g. 7200RPM+) for the home directory and backups.
+System Memory 12 GB
+JVM Heap Size 3GB
+
+Total disk space 150 GB
+Installation Directory: 20GB
+Home Directory: 130GB 
+Indexes: Use fastest disks possible (7200RPM+ disk speed or use Solid State Drives)
+
+Java 1.8
+We recommend using the Critical Path Update (CPU) releases. You don't need to install Java if using the Windows Installer or Linux Installer, as the JRE is bundled with JIRA. 
+
+Operating systems:
+Microsoft Windows
+Linux / Solaris
+Mac OS X
+Amazon Web Services (AWS)
+Microsoft Azure
+
+JIRA is a pure Java-based application and should run on any supported operating system, provided that the JDK / JRE requirements are satisfied.
+We only support JIRA running on x86 hardware and 64-bit derivatives of x86 hardware.
+
+Anti virus
+
+Although we cannot directly recommend specific Anti-Virus software to use with JIRA applications we would like to advise our customers that if you are experiencing slowness with your JIRA application, try running it with virus checking disabled. As JIRA applications create many temporary files it is possible that due to disk I/O and resourcing, virus checking software can slow JIRA applications dramatically.
+Most anti-virus software causes a dramatic increase in disk IO and CPU Usage when used with JIRA applications. McAfee's NetShield 4.5 in particular claims to let you exclude folders from scanning, through from previous investigations we have found this not to be the case - upgrade to version 7.0.0 to fix this.
+Symantec Anti-Virus should be uninstalled, as our experiences with it have shown it to cause dramatic performance degradation even when the service is turned off.
+
+Workaround
+Exclude <JIRA_Home> and <JIRA_Install> from antivirus scanning
+As noted above, Symantec Anti-Virus should be uninstalled
+Some Antivirus software may continue to impact JIRA applications even if these folders are excluded. If slowness is experienced, try running JIRA applications with virus checking disabled.
+
+
+Browsers
+Chrome (latest stable version)
+Internet Explorer 11
+Microsoft Edge
+Mozilla Firefox (latest stable version) 
+Safari on Mac OS X only (latest stable version)
+Minimum screen resolution of 1024 x 768 (when browsers are maximized).
+'Compatibility View' won't work on Internet Explorer.
+
+
+Databases
+Oracle 12c R1 12.2.0.1
+SQL Server 2014
+SQL Server 2012
+
+
+Virtualization
+VMware supports all of the operating systems listed under 'Operating systems'.
+We don't provide support for VMWare itself.
+
+
+Application server
+We support Apache Tomcat 8.5. 
+We don't support deploying multiple Atlassian applications in a single Tomcat container. 
+
+
+Internet protocols (IP)
+We support IPv4.
+We don't support IPv6
+
+
+External user directories
+You can manage users in the following LDAP directories:
+	Apache Directory Server 1.0.x
+	Apache Directory Server 1.5.x
+	Apple Open Directory (Read-Only)
+	FedoraDS (Read-Only Posix Schema)
+	Generic Directory Server
+	Generic Posix/RFC2307 Directory (Read-Only)
+	Microsoft Active Directory
+	Novell eDirectory Server
+	OpenDS
+	Open LDAP
+	Open LDAP (Read-Only Posix Schema)
+	Sun Directory Server Enterprise Edition
+
+
+Mail servers
+SMTP servers must be able to support the multipart content type.
+
+
+
+
+Confluence
+
+CPU: Quad core 2.8GHz+ CPU
+RAM: 12GB
+Minimum database space: 10GB
+We only officially support Confluence running on x86 hardware and 64-bit derivatives of x86 hardware.
+HDD: 200 GB minimum
+
+
+Browsers
+Internet Explorer 11
+Microsoft Edge
+Chrome
+Firefox
+We test Confluence in Internet Explorer 11 using standards-compliant rendering mode, not compatibility mode. You may experience problems in compatibility mode.
+The Confluence setup wizard requires Javascript to be enabled while installing Confluence.
+Parts of Confluence won't display correctly if your browser window size is less than 1024x768.
+
+Operating systems
+Microsoft Windows
+Linux (most distributions)
+You can run Confluence on 32bit or 64bit operating systems, but we only provide installers for 64bit operating systems.
+You can evaluate Confluence on MacOS / OSX, but you can't install and run your production Confluence site on a Mac. 
+
+
+Databases
+Oracle 12c (Release 1)
+SQL Server 2012
+SQL Server 2014
+
+
+Java
+Java 1.8
+Some Java versions have bugs that impact Confluence. You can't run Confluence on Java 1.8.0_25 and 1.8.0_31 (see JDK-8059299) or Java 1.8.0_45 (see JDK-8068400).
+Confluence will not work with OpenJDK. If you're installing Java yourself, you must use Oracle Java. 
+You don't need to install Java if you plan to use the installer to install Confluence, as the JRE is bundled with Confluence.
+
+Hardware
+You can't run Confluence on SPARC based hardware. You'll need to use x86 hardware or 64bit derivatives of x86 hardware.
+You can't use an NFS mount for your installation or home directory due to Lucene requirements. If you're installing Confluence Data Center, an NFS mount is fine for the shared home directory, but not for the local home directories.
+
+Virtualization
+Our support team can assist you with problems running Confluence in a Docker container, but can't offer support for problems related to the environment itself. 
+Our support team can assist you with deploying Confluence Data Center in AWS using the Cloud Formation Template or Quick Start. We won't be able to assist you if you have customised the Cloud Formation Template. 
+
+
+Application server:
+We only support the Tomcat version that is bundled with your Confluence version. You can't run Confluence in your own application server. 
+
+
+Antivirus considerations
+Antivirus software on the operating system running Confluence can greatly decrease the performance of Confluence. Antivirus software that intercepts access to the hard disk is particularly detrimental and may even cause errors in Confluence. This is particularly important if you are running Confluence on Windows. No matter how fast your hardware is, antivirus software will almost always have a negative impact on Confluence's performance.
+You should configure your antivirus software to ignore the following directories:
+Confluence home directory
+Confluence's index directory
+All database-related directories
+
+
