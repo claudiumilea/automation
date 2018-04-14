@@ -65,14 +65,14 @@ try:
         
 
     if check_exists_by_xpath('//*[@id="headingSubtext"]'):
-        driver.find_element(By.XPATH,'//*[@id="identifierId"]').send_keys('claudius.milea')
+        driver.find_element(By.XPATH,'//*[@id="identifierId"]').send_keys('')
         driver.find_element(By.XPATH,'//*[@id="identifierNext"]/content').click()
         time.sleep(2)
         get_screenshot(screenshot_path)
         
 
     if check_exists_by_xpath('//*[@id="forgotPassword"]/content/span'):
-        driver.find_element(By.XPATH,'//*[@id="password"]/div[1]/div/div[1]/input').send_keys(base64.b64decode('QG01NzNyZEBt').decode())
+        driver.find_element(By.XPATH,'//*[@id="password"]/div[1]/div/div[1]/input').send_keys(base64.b64decode('').decode())
         driver.find_element(By.XPATH,'//*[@id="passwordNext"]/content/span').click()
         time.sleep(2)
         get_screenshot(screenshot_path)
